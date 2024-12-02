@@ -128,6 +128,8 @@ Tongji校徽如\autoref{Tongji}所示，注意这里使用了\verb|~\autoref{}|�
     \begin{lstlisting}[language=C++, caption=My Code, label=lst:code]
         #include<iostream>
         using namespace std;
+
+        // This is a sample struct
         struct node
         {
             int x;
@@ -136,6 +138,7 @@ Tongji校徽如\autoref{Tongji}所示，注意这里使用了\verb|~\autoref{}|�
         int main()
         {
             struct node p;
+            cout << "Enter x and y: ";
             cin >> p.x >> p.y;
             return 0;
         }
