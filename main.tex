@@ -183,6 +183,33 @@ Tongji校徽如\autoref{Tongji}所示，注意这里使用了\verb|~\autoref{}|�
     \label{proof}
 \end{proof}
 
+\subsection{插入伪代码}
+
+本模板还提供伪代码的插入，使用\verb|\begin{algorithm}|和\verb|\end{algorithm}|模块，具体使用方法请参考\href{https://en.wikibooks.org/wiki/LaTeX/Algorithms}{LaTeX/Algorithms}，以下是Dijkstra算法的伪代码\ref{alg:dijkstra}：
+
+\begin{algorithm}
+    \caption{Dijkstra's Algorithm}
+    \label{alg:dijkstra}
+    \begin{algorithmic}[1]
+        \Require Graph $G=(V,E)$ with non-negative weights, source vertex $s$
+        \Ensure Shortest path distances $d[v]$ from source $s$ to each vertex $v \in V$
+        \State Initialize distance array $d[]$, for each vertex $v \in V$, set $d[v] = \infty$
+        \State Set $d[s] = 0$
+        \State Initialize priority queue $Q$, insert all vertices with their distances
+        \While{$Q$ is not empty}
+            \State Extract vertex $v$ with minimum distance from $Q$
+            \For{each neighbor $u$ of $v$}
+                \State Calculate alternative path distance $\text{alt} = d[v] + \text{weight}(v, u)$
+                \If{$\text{alt} < d[u]$}
+                    \State Update $d[u] = \text{alt}$
+                    \State Decrease key of $u$ in $Q$ to $\text{alt}$
+                \EndIf
+            \EndFor
+        \EndWhile
+    \end{algorithmic}
+\end{algorithm}
+
+
 \subsection{插入参考文献}
 直接使用\verb|\cite{}|即可。
 
